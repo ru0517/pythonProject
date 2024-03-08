@@ -163,25 +163,16 @@ side1 = float(input("Enter the length of side 1: "))
 side2 = float(input("Enter the length of side 2: "))
 side3 = float(input("Enter the length of side 3: "))
 
-if side1 == side2 == side3:
-    triangle_type = "Equilateral"
-elif side1 == side2 or side1 == side3 or side2 == side3:
-    triangle_type = "Isosceles"
+if side1 + side2 > side3 and side1 + side3 > side2 and side2 + side3 > side1:
+    if side1 == side2 == side3:
+        triangle_type = "Equilateral"
+    elif side1 == side2 or side1 == side3 or side2 == side3:
+        triangle_type = "Isosceles"
+    else:
+        triangle_type = "Scalene"
+    print("The triangle is:", triangle_type)
 else:
-    triangle_type = "Scalene"
-
-if side1 + side2 < side3:
-  print("Triangle doesn`t exist")
-  triangle_type = "no"
-if side3 + side2 < side1:
-  print("Triangle doesn`t exist")
-  triangle_type = "no"
-if side1 + side3 < side2:
-  print("Triangle doesn`t exist")
-  triangle_type = "no"
-
-
-print("The triangle is:", triangle_type)
+    print("not valid triangle")
 
 """7. Write a Python program that performs arithmetic operations on two numbers."""
 
@@ -220,7 +211,7 @@ elif operation == "-":
 elif operation == "*":
     result = num1 * num2
 elif operation == "/":
-  if num1 == 0:
+  if num2 == 0:
     print("Can`t divide by 0")
     result = "Can`t divide by 0"
   else:
